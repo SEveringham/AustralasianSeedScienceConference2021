@@ -1,0 +1,9 @@
+---
+title: "Map of EMCR locations"
+output:
+  html_document:
+    theme: flatly
+    toc: yes
+    toc_float: yes
+---
+
