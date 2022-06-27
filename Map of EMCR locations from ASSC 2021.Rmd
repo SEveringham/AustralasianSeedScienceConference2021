@@ -7,3 +7,42 @@ output:
     toc_float: yes
 ---
 
+Libraries Required
+
+```{r, message = FALSE}
+library(ggmap)
+```
+
+Load our location data
+
+```{r}
+#this is a spreadsheet with the 23 EMCR presenters (both talks and posters) pulled from the ASSC 2021 conference booklet which can be found at: https://www.seedpartnership.org.au/wp-content/uploads/2021/10/ASSC-2021-Program-Booklet.pdf
+
+EMCRlocationdata <- read.csv("ASSC EMCR talks by theme.csv")
+```
+
+Constructing world map for base
+
+```{r}
+WorldMap <- ggplot() + borders("world", colour="black", fill="#C7DBC8") + theme_classic()
+WorldMap
+```
+Add our location points to world map
+
+```{r}
+MyMap <- WorldMap + 
+  geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#262A76", size =3, alpha=0.9, shape=17) +
+  ylim(-65,90)
+MyMap
+```
+
+Now creating a map of Australia as an inlay for this world map
+
+```{r}
+AusMap <- WorldMap + 
+  geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#262A76", size =5, alpha=0.8, shape=17) +
+  ylim(-45,-11) +
+  xlim(110, 155)
+AusMap
+```
+
