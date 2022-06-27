@@ -11,7 +11,6 @@ Wolfgang Lewandrowski
 
 ## Table of Contents
 
-1. "
-
+1. "Map of EMCR locations from ASSC 2021.Rmd" - this code reads in the location data for all EMCR presenters from the Australasian seed science conference 2021
 
 
