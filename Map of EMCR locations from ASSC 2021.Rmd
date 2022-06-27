@@ -32,7 +32,10 @@ Add our location points to world map
 ```{r}
 MyMap <- WorldMap + 
   geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#262A76", size =3, alpha=0.9, shape=17) +
-  ylim(-65,90)
+  ylim(-65,90) +
+  theme(axis.text=element_text(size=15),
+        axis.title=element_text(size=20)) +
+  labs(y = "Latitude (degrees)", x = "Longitude (degrees)")
 MyMap
 ```
 
@@ -40,9 +43,12 @@ Now creating a map of Australia as an inlay for this world map
 
 ```{r}
 AusMap <- WorldMap + 
-  geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#262A76", size =5, alpha=0.8, shape=17) +
+  geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#262A76", size =5, alpha=0.7, shape=17) +
   ylim(-45,-11) +
-  xlim(110, 155)
+  xlim(110, 155) +
+  theme(axis.text=element_text(size=15),
+        axis.title=element_text(size=20)) +
+  labs(y = "Latitude (degrees)", x = "Longitude (degrees)")
 AusMap
 ```
 
