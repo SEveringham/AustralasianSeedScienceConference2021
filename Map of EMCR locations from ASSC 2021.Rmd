@@ -24,14 +24,14 @@ EMCRlocationdata <- read.csv("ASSC EMCR talks by theme.csv")
 Constructing world map for base
 
 ```{r}
-WorldMap <- ggplot() + borders("world", colour="black", fill="#C7DBC8") + theme_classic()
+WorldMap <- ggplot() + borders("world", colour="grey", fill="#C7DBC8") + theme_classic()
 WorldMap
 ```
 Add our location points to world map
 
 ```{r}
 MyMap <- WorldMap + 
-  geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#CF6B21", size =8, alpha=0.8, shape=17) +
+  geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#CF6B21", size =10, alpha=0.8, shape=17) +
   ylim(-65,90) +
   theme(axis.text=element_text(size=40),
         axis.title=element_text(size=55)) +
