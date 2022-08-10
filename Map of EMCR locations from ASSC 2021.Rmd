@@ -46,8 +46,8 @@ AusMap <- WorldMap +
   geom_point(aes(x=Long, y=Lat), data = EMCRlocationdata, colour = "#CF6B21", size =14, alpha=0.7, shape=17) +
   ylim(-45,-11) +
   xlim(110, 155) +
-  theme(axis.text=element_text(size=50),
-        axis.title=element_text(size=45)) +
+  theme(axis.text=element_text(size=40),
+        axis.title=element_text(size=55)) +
   labs(y = "Latitude (degrees)", x = "Longitude (degrees)")
 AusMap
 ```
