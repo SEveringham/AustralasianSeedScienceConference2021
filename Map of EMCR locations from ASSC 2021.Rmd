@@ -31,7 +31,7 @@ Add our location points to world map
 
 ```{r}
 MyMap <- WorldMap +
-  geom_point(aes(x=Long, y=Lat, size = SpeciesNumber), data = EMCRlocationdata, alpha=0.8, shape=1, stroke = 2) +
+  geom_point(aes(x=Long, y=Lat, size = SpeciesNumber), data = EMCRlocationdata, alpha=0.7, shape=1, stroke = 2) +
   ylim(-65,90) +
   theme(axis.text=element_text(size=40),
         axis.title=element_text(size=55)) +
